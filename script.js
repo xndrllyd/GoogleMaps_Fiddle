@@ -2,7 +2,7 @@ var map,
     world = new google.maps.LatLng(40.97990, 1.40625),
     usa = new google.maps.LatLng(39.77477, -98.61328),
     uk = new google.maps.LatLng(54.11094, -4.57031),
-    url
+    url,
     btns = [];
 
 function initialize() {
