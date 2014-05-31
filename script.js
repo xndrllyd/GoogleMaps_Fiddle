@@ -2,15 +2,17 @@ var map,
     world = new google.maps.LatLng(40.97990, 1.40625),
     usa = new google.maps.LatLng(39.77477, -98.61328),
     uk = new google.maps.LatLng(54.11094, -4.57031),
-    url,
-    marker = [];
+    url
+    btns = [];
 
 function initialize() {
     var options = {
-        center: world,
-        zoom: 1,
-        mapTypeId: google.maps.MapTypeId.ROADMAP
-    };
+            center: world,
+            zoom: 1,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        },
+        marker = [],
+        elm = document.getElementById("buttons").firstChild;
         
     map = new google.maps.Map(document.getElementById("map"),
         options);
@@ -40,6 +42,9 @@ function initialize() {
             }
         }
     }
+    
+    do { btns.push(elm);
+    } while (elm = elm.nextSibling);
 }
 
 function attachInfo(marker) { 
@@ -79,13 +84,6 @@ function attachInfo(marker) {
 }
 
 function changeLocation(location) {
-    var btns = [], 
-        elm = event.target.parentNode.firstChild;
-    
-    do { 
-        btns.push(elm);
-    } while (elm = elm.nextSibling);
-
     for(var i = 0; i < btns.length; i++) {
         btns[i].className = "";
     }
