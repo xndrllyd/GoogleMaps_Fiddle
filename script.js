@@ -79,9 +79,8 @@ function attachInfo(marker) {
 }
 
 function changeLocation(location) {
-    var btns = [], elm = event.target;
-    
-    elm = elm.parentNode.firstChild;
+    var btns = [], 
+        elm = event.target.parentNode.firstChild;
     
     do { 
         btns.push(elm);
